@@ -7,7 +7,7 @@
 [ext_resource path="res://assets/fonts/Soviet2.ttf" type="DynamicFontData" id=5]
 [ext_resource path="res://scenes/Info.tscn" type="PackedScene" id=6]
 
-[sub_resource type="SpriteFrames" id=7]
+[sub_resource type="SpriteFrames" id=1]
 
 animations = [ {
 "frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ) ],
@@ -16,7 +16,7 @@ animations = [ {
 "speed": 3.0
 } ]
 
-[sub_resource type="DynamicFont" id=4]
+[sub_resource type="DynamicFont" id=2]
 
 size = 90
 use_mipmaps = false
@@ -24,7 +24,7 @@ use_filter = false
 font_data = ExtResource( 5 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="DynamicFont" id=3]
 
 size = 60
 use_mipmaps = true
@@ -32,7 +32,7 @@ use_filter = false
 font_data = ExtResource( 5 )
 _sections_unfolded = [ "Extra Spacing", "Font", "Settings" ]
 
-[sub_resource type="DynamicFont" id=3]
+[sub_resource type="DynamicFont" id=4]
 
 size = 60
 use_mipmaps = false
@@ -56,7 +56,7 @@ use_filter = false
 font_data = ExtResource( 5 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[node name="MainMenu" type="CanvasLayer" index="0"]
+[node name="MainMenu" type="CanvasLayer"]
 
 layer = 1
 offset = Vector2( 0, 0 )
@@ -72,7 +72,7 @@ __meta__ = {
 
 position = Vector2( 510.589, 299.483 )
 scale = Vector2( 6.37691, 6.64954 )
-frames = SubResource( 7 )
+frames = SubResource( 1 )
 animation = "cycle"
 
 [node name="Label" type="Label" parent="." index="1"]
@@ -91,7 +91,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 2 )
 text = "Cards Against Inhumanity"
 align = 1
 percent_visible = 1.0
@@ -116,7 +116,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 3 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -143,7 +143,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 4 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
