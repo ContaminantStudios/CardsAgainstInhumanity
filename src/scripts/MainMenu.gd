@@ -9,6 +9,7 @@ func _ready():
 	$AnimatedSprite.position.x = screensize.x / 2
 	$AnimatedSprite.position.y = screensize.y / 2
 	$AnimatedSprite.play()
+	$AudioStreamPlayer.play()
 
 func _process(delta):
 	if Input.is_key_pressed(KEY_ESCAPE):

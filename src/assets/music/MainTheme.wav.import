@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/MainTheme.wav-84f68ef7360a0ba4731fc4cfee9df2b8.sample"
+
+[deps]
+
+source_file="res://assets/music/MainTheme.wav"
+source_md5="f4369c3f77b908d3f00872b7ffc328fa"
+
+dest_files=[ "res://.import/MainTheme.wav-84f68ef7360a0ba4731fc4cfee9df2b8.sample" ]
+dest_md5="a1cf0075ddc817bf190a9016fd49fd4b"
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0
