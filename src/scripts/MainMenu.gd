@@ -3,6 +3,7 @@ extends CanvasLayer
 var screensize
 
 func _ready():
+	randomize()
 	screensize = get_viewport().size
 	$Info/Label.hide()
 	$Info/ColorRect.hide()

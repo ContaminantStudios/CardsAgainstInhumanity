@@ -10,7 +10,7 @@ source_file="res://assets/cards/CardBase.png"
 source_md5="096fa00a5354af66ca698e38a180b774"
 
 dest_files=[ "res://.import/CardBase.png-fb5235d7fc700e3dca2172d17ea15be2.stex" ]
-dest_md5="5841943cf221f1e4570ea1aa817030ef"
+dest_md5="41ab60709556d68551ea29911636a5ce"
 
 [params]
 
@@ -19,7 +19,7 @@ compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

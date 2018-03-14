@@ -7,10 +7,10 @@ path="res://.import/MainTheme.wav-84f68ef7360a0ba4731fc4cfee9df2b8.sample"
 [deps]
 
 source_file="res://assets/music/MainTheme.wav"
-source_md5="f4369c3f77b908d3f00872b7ffc328fa"
+source_md5="269d7e7d2f3fefa360de17c698921d54"
 
 dest_files=[ "res://.import/MainTheme.wav-84f68ef7360a0ba4731fc4cfee9df2b8.sample" ]
-dest_md5="a1cf0075ddc817bf190a9016fd49fd4b"
+dest_md5="f56bccaa1e81b5348a14bc2536fb5c49"
 
 [params]
 
