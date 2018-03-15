@@ -71,8 +71,8 @@ __meta__ = {
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="." index="0"]
 
-position = Vector2( 510.589, 299.483 )
-scale = Vector2( 6.37691, 6.64954 )
+position = Vector2( 939.937, 541.693 )
+scale = Vector2( 10.2891, 10.729 )
 frames = SubResource( 1 )
 animation = "cycle"
 
@@ -217,6 +217,8 @@ volume_db = 0.0
 autoplay = false
 mix_target = 0
 bus = "BGM"
+
+[connection signal="pressed" from="StartButton" to="." method="start_game"]
 
 [connection signal="pressed" from="DifficultyButton" to="." method="on_difficulty_pressed"]
 

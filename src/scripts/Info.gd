@@ -12,4 +12,3 @@ func hide_all():
 	$ColorRect.hide()
 	$Label.hide()
 	$Button.disabled = true
-	

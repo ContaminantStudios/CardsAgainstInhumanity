@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://assets/backdrops/PlayAreaMock.png" type="Texture" id=1]
+
+[node name="Game" type="CanvasLayer"]
+
+layer = 1
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+
+[node name="PlayAreaMock" type="Sprite" parent="." index="0"]
+
+position = Vector2( 512.341, 299.378 )
+scale = Vector2( 1.6415, 1.70505 )
+texture = ExtResource( 1 )
+_sections_unfolded = [ "Transform" ]
+
+
