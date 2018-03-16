@@ -14,11 +14,6 @@ animations = [ {
 }, {
 "frames": [  ],
 "loop": true,
-"name": "CARD_02",
-"speed": 5.0
-}, {
-"frames": [  ],
-"loop": true,
 "name": "CARD_01",
 "speed": 5.0
 }, {
@@ -26,16 +21,21 @@ animations = [ {
 "loop": true,
 "name": "CARD_00",
 "speed": 1.0
+}, {
+"frames": [  ],
+"loop": true,
+"name": "CARD_02",
+"speed": 5.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
-extents = Vector2( 22.6532, 34.3258 )
+extents = Vector2( 230.6, 344.362 )
 
-[node name="Card" type="Area2D"]
+[node name="Card" type="Area2D" index="0"]
 
-scale = Vector2( 3, 3 )
+scale = Vector2( 0.3, 0.3 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -60,6 +60,8 @@ position = Vector2( -0.239955, 0 )
 scale = Vector2( 1.05359, 1 )
 shape = SubResource( 2 )
 disabled = true
+
+[connection signal="input_event" from="." to="." method="card_input_event"]
 
 [connection signal="mouse_entered" from="." to="." method="card_mouse_entered"]
 

@@ -7,10 +7,10 @@ path="res://.import/CardBase.png-fb5235d7fc700e3dca2172d17ea15be2.stex"
 [deps]
 
 source_file="res://assets/cards/CardBase.png"
-source_md5="096fa00a5354af66ca698e38a180b774"
+source_md5="1fbf4c4769ca4d73b25890aede31ce08"
 
 dest_files=[ "res://.import/CardBase.png-fb5235d7fc700e3dca2172d17ea15be2.stex" ]
-dest_md5="41ab60709556d68551ea29911636a5ce"
+dest_md5="2f7982eaf14175a499304cc8c5cee579"
 
 [params]
 

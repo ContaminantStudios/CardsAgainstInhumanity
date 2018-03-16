@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Card03.png-3d949a1c8b68cb970a3cef4bf2539d3b.stex"
+path="res://.import/CardStack.png-f4e3d852b5659a02f91afe1ee1f7fb5c.stex"
 
 [deps]
 
-source_file="res://assets/cards/Card03.png"
-source_md5="66e1ccb0e07195255650bd220b96a5cc"
+source_file="res://assets/cards/CardStack.png"
+source_md5="7c547e6dfad1967d2255d114d675f443"
 
-dest_files=[ "res://.import/Card03.png-3d949a1c8b68cb970a3cef4bf2539d3b.stex" ]
-dest_md5="e55d1dedb362bc28f82c4c5403b152d1"
+dest_files=[ "res://.import/CardStack.png-f4e3d852b5659a02f91afe1ee1f7fb5c.stex" ]
+dest_md5="337d2003e2ab4749385cf56b644acec2"
 
 [params]
 
