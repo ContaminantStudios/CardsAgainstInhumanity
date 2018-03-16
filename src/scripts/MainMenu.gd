@@ -34,4 +34,4 @@ func on_info_pressed():
 
 
 func start_game():
-	pass # replace with function body
+	get_tree().change_scene("res://scenes/Game.tscn")

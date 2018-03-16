@@ -17,15 +17,15 @@ animations = [ {
 "name": "CARD_02",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 3 ) ],
-"loop": true,
-"name": "CARD_00",
-"speed": 1.0
-}, {
 "frames": [  ],
 "loop": true,
 "name": "CARD_01",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 3 ) ],
+"loop": true,
+"name": "CARD_00",
+"speed": 1.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
@@ -35,6 +35,7 @@ extents = Vector2( 22.6532, 34.3258 )
 
 [node name="Card" type="Area2D" index="0"]
 
+scale = Vector2( 3, 3 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -43,6 +44,7 @@ angular_damp = 1.0
 audio_bus_override = false
 audio_bus_name = "Master"
 script = ExtResource( 1 )
+_sections_unfolded = [ "Transform" ]
 __meta__ = {
 "_edit_group_": true
 }

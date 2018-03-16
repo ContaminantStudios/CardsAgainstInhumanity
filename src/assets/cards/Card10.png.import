@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/PlayAreaMockNoArt.png-ff0569f44b9a043b2ecbdf813292fb82.stex"
+path="res://.import/Card10.png-23151901765cd7dde69d401ce5a1e04d.stex"
 
 [deps]
 
-source_file="res://assets/backdrops/PlayAreaMockNoArt.png"
-source_md5="a1cc2beacb1dc1c00c082346e2696932"
+source_file="res://assets/cards/Card10.png"
+source_md5="798633eadc73f24f0b13299d64b2c2ed"
 
-dest_files=[ "res://.import/PlayAreaMockNoArt.png-ff0569f44b9a043b2ecbdf813292fb82.stex" ]
-dest_md5="d8a672c00882ad00ceb89a3f18ae2799"
+dest_files=[ "res://.import/Card10.png-23151901765cd7dde69d401ce5a1e04d.stex" ]
+dest_md5="e123c1801db81a87b017c9c2697cda5e"
 
 [params]
 
@@ -19,7 +19,7 @@ compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=false
+flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
