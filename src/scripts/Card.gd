@@ -14,6 +14,11 @@ var r_val
 var n_val
 var s_val
 var point_type
+var start_embiggening
+var embiggening
+var start_minimizing
+var minimizing
+var t
 
 func init(card_id, pos):
 	card = CARDS[card_id]
@@ -25,6 +30,32 @@ func init(card_id, pos):
 	point_type = POINT_TYPES[card_id]
 	$AnimatedSprite.animation = card
 	position = pos
+	embiggening = false
+	t = 0.0
+
+func _process(delta):
+	if start_embiggening:
+		embiggening = true
+		minimizing = false
+		t = 0
+		start_embiggening = false
+	
+	if start_minimizing:
+		minimizing = true
+		embiggening = false
+		t = 0
+		start_minimizing = false
+
+	if embiggening:
+		t += delta
+		scale.x = clamp(-cos((PI / 0.5) * t) + 4, 3, 5)
+		scale.y = clamp(-cos((PI / 0.5) * t) + 4, 3, 5)
+		embiggening = scale.x < 4.98
+	elif minimizing:
+		t += delta
+		scale.x = clamp(cos((PI / 0.5) * t) + 4, 3, 5)
+		scale.y = clamp(cos((PI / 0.5) * t) + 4, 3, 5)
+		minimizing = scale.x > 3.02
 
 func play(col):
 	var val_sign
@@ -44,6 +75,9 @@ func get_point_type():
 func move(pos):
 	position = pos
 
+func card_mouse_entered():
+	start_embiggening = true
 
-func _on_Card_mouse_entered():
-	print("Mouse Entered Card")
+
+func card_mouse_exited():
+	start_minimizing = true

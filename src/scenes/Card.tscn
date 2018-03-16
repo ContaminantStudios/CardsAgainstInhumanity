@@ -33,7 +33,7 @@ animations = [ {
 custom_solver_bias = 0.0
 extents = Vector2( 22.6532, 34.3258 )
 
-[node name="Card" type="Area2D" index="0"]
+[node name="Card" type="Area2D"]
 
 scale = Vector2( 3, 3 )
 input_pickable = true
@@ -60,5 +60,9 @@ position = Vector2( -0.239955, 0 )
 scale = Vector2( 1.05359, 1 )
 shape = SubResource( 2 )
 disabled = true
+
+[connection signal="mouse_entered" from="." to="." method="card_mouse_entered"]
+
+[connection signal="mouse_exited" from="." to="." method="card_mouse_exited"]
 
 
