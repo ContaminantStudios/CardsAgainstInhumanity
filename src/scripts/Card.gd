@@ -19,6 +19,7 @@ var embiggening
 var start_minimizing
 var minimizing
 var t
+var holding
 
 func init(card_id, pos):
 	card = CARDS[card_id]
@@ -34,6 +35,7 @@ func init(card_id, pos):
 	t = 0.0
 
 func _process(delta):
+	# Card Scaling Code
 	if start_embiggening:
 		embiggening = true
 		minimizing = false
@@ -56,6 +58,9 @@ func _process(delta):
 		scale.x = clamp(0.1 * cos((PI / 0.5) * t) + 0.4, 0.3, 0.5)
 		scale.y = clamp(0.1 * cos((PI / 0.5) * t) + 0.4, 0.3, 0.5)
 		minimizing = scale.x > 0.302
+	
+	# Card Holding Code TODO
+	
 
 func play(col):
 	var val_sign
@@ -81,8 +86,18 @@ func card_mouse_entered():
 
 func card_mouse_exited():
 	start_minimizing = true
+	holding = false
 
 
 func card_input_event(viewport, event, shape_idx):
 	if event.is_pressed():
 		print("Card Pressed")
+		print("Mouse Position: ", get_local_mouse_position())
+		if !holding:
+			holding = true
+			scale.x = 0.6
+			scale.y = 0.6
+		else:
+			holding = false
+			scale.x = 0.5
+			scale.y = 0.5

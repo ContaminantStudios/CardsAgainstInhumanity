@@ -33,7 +33,7 @@ animations = [ {
 custom_solver_bias = 0.0
 extents = Vector2( 230.6, 344.362 )
 
-[node name="Card" type="Area2D" index="0"]
+[node name="Card" type="Area2D"]
 
 scale = Vector2( 0.3, 0.3 )
 input_pickable = true
