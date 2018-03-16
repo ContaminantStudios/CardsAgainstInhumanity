@@ -10,7 +10,6 @@ func _ready():
 	$AnimatedSprite.position.y = screensize.y / 2
 	$AnimatedSprite.play()
 	# $AudioStreamPlayer.play() uncomment for audio
-	make_card()
 
 func _process(delta):
 	screensize = get_viewport().size
@@ -36,10 +35,3 @@ func on_info_pressed():
 
 func start_game():
 	pass # replace with function body
-
-func make_card():
-	var card_scene = preload("res://scenes/Card.tscn")
-	var card_node = card_scene.instance()
-	card_node.init(, Vector2(0, 0))
-	add_child(card_node)
-	card_node

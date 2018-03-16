@@ -43,3 +43,7 @@ func get_point_type():
 
 func move(pos):
 	position = pos
+
+
+func _on_Card_mouse_entered():
+	print("Mouse Entered Card")
