@@ -2,6 +2,7 @@ extends Area2D
 
 signal in_column
 signal out_of_column
+signal turn_done
 
 const CARDS = ['CARD_00', 'CARD_01', 'CARD_02']
 const R_CHANCES = [0.8, 0.7, 0.4]
@@ -29,6 +30,9 @@ var cols_pos
 var _in_column
 var col
 var home
+var start_dying
+var dying
+var beginning_scale
 
 func init(card_id, pos, colr, coln, cols):
 	card = CARDS[card_id]
@@ -38,6 +42,7 @@ func init(card_id, pos, colr, coln, cols):
 	n_val = N_VALS[card_id]
 	s_val = S_VALS[card_id]
 	point_type = POINT_TYPES[card_id]
+	print("Point Type: ", point_type)
 	$AnimatedSprite.animation = card
 	position = pos
 	embiggening = false
@@ -48,6 +53,7 @@ func init(card_id, pos, colr, coln, cols):
 	cols_pos = cols
 	col = 'S'
 	home = pos
+	dying = false
 
 func _process(delta):
 	if not playing:	
@@ -73,6 +79,20 @@ func _process(delta):
 			scale.x = clamp(0.1 * cos((PI / 0.5) * t) + 0.4, 0.3, 0.5)
 			scale.y = clamp(0.1 * cos((PI / 0.5) * t) + 0.4, 0.3, 0.5)
 			minimizing = scale.x > 0.302
+			
+		if start_dying:
+			t = 0
+			dying = true
+			start_dying = false
+			beginning_scale = scale.x
+		if dying:
+			t += delta
+			scale.x = clamp(beginning_scale - t, 0, beginning_scale)
+			scale.y = clamp(beginning_scale - t, 0, beginning_scale)
+			dying = scale.x > 0.002
+			if not dying:
+				emit_signal("turn_done")
+				queue_free()
 
 func play():
 	var val_sign
@@ -137,3 +157,11 @@ func move_to_cols():
 		playing = false
 		_in_column = true
 		emit_signal("in_column")
+
+func play_card():
+	if _in_column:
+		var play_value = play()
+		get_tree().get_root().get_node("Game").update_resources(point_type, play_value)
+		start_dying = true
+		minimizing = false
+		embiggening = false

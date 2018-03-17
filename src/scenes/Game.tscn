@@ -1,12 +1,33 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://scripts/Game.gd" type="Script" id=1]
 [ext_resource path="res://assets/backdrops/PlayAreaMockNoArt.png" type="Texture" id=2]
+[ext_resource path="res://assets/fonts/Soviet2.ttf" type="DynamicFontData" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
 extents = Vector2( 19.5953, 20.7033 )
+
+[sub_resource type="DynamicFontData" id=2]
+
+font_path = "res://assets/fonts/Soviet2.ttf"
+
+[sub_resource type="DynamicFont" id=3]
+
+size = 50
+use_mipmaps = false
+use_filter = false
+font_data = SubResource( 2 )
+_sections_unfolded = [ "Extra Spacing", "Settings" ]
+
+[sub_resource type="DynamicFont" id=4]
+
+size = 70
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 3 )
+_sections_unfolded = [ "Font", "Settings" ]
 
 [node name="Game" type="Node2D" index="0"]
 
@@ -34,6 +55,7 @@ _sections_unfolded = [ "Collision", "Transform" ]
 
 [node name="ColRShape" type="CollisionShape2D" parent="ColR" index="0"]
 
+visible = false
 position = Vector2( 0.171829, -0.0292015 )
 scale = Vector2( 1.63097, 1.54292 )
 shape = SubResource( 1 )
@@ -52,6 +74,7 @@ audio_bus_name = "Master"
 
 [node name="ColNShape" type="CollisionShape2D" parent="ColN" index="0"]
 
+visible = false
 position = Vector2( -0.140709, 0.101883 )
 scale = Vector2( 1.66678, 1.53821 )
 shape = SubResource( 1 )
@@ -70,6 +93,7 @@ audio_bus_name = "Master"
 
 [node name="ColSShape" type="CollisionShape2D" parent="ColS" index="0"]
 
+visible = false
 position = Vector2( -0.10376, 0.0123291 )
 scale = Vector2( 1.67332, 1.54517 )
 shape = SubResource( 1 )
@@ -119,10 +143,97 @@ _sections_unfolded = [ "Transform" ]
 position = Vector2( 1600, 400 )
 _sections_unfolded = [ "Transform" ]
 
+[node name="UI" type="CanvasLayer" parent="." index="13"]
+
+layer = 1
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+
+[node name="PlayButton" type="Button" parent="UI" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 22.0
+margin_top = 22.0
+margin_right = 126.0
+margin_bottom = 85.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_fonts/font = SubResource( 3 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Play"
+flat = false
+align = 1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="PassButton" type="Button" parent="UI" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 136.0
+margin_top = 22.0
+margin_right = 240.0
+margin_bottom = 85.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_fonts/font = SubResource( 3 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Pass"
+flat = false
+align = 1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="Turns" type="Label" parent="UI" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 833.0
+margin_top = 32.0
+margin_right = 1099.0
+margin_bottom = 111.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 4 )
+text = "Turns: 20"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
 [connection signal="input_event" from="ColR" to="." method="colr_input_event"]
 
 [connection signal="input_event" from="ColN" to="." method="coln_input_event"]
 
 [connection signal="input_event" from="ColS" to="." method="cols_input_event"]
+
+[connection signal="pressed" from="UI/PlayButton" to="." method="play_button_pressed"]
 
 
