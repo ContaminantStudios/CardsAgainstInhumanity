@@ -1,5 +1,8 @@
 extends Area2D
 
+signal in_column
+signal out_of_column
+
 const CARDS = ['CARD_00', 'CARD_01', 'CARD_02']
 const R_CHANCES = [0.8, 0.7, 0.4]
 const N_CHANCES = [0.4, 0.3, 0.1]
@@ -20,8 +23,14 @@ var start_minimizing
 var minimizing
 var t
 var playing
+var colr_pos
+var coln_pos
+var cols_pos
+var _in_column
+var col
+var home
 
-func init(card_id, pos):
+func init(card_id, pos, colr, coln, cols):
 	card = CARDS[card_id]
 	r_chance = R_CHANCES[card_id]
 	n_chance = N_CHANCES[card_id]
@@ -34,33 +43,38 @@ func init(card_id, pos):
 	embiggening = false
 	t = 0.0
 	playing = false
+	colr_pos = colr
+	coln_pos = coln
+	cols_pos = cols
+	col = 'S'
+	home = pos
 
 func _process(delta):
-	# Card Scaling Code
-	if start_embiggening:
-		embiggening = true
-		minimizing = false
-		t = 0
-		start_embiggening = false
+	if not playing:	
+		# Card Scaling Code
+		if start_embiggening:
+			embiggening = true
+			minimizing = false
+			t = 0
+			start_embiggening = false
+		if start_minimizing:
+			minimizing = true
+			embiggening = false
+			t = 0
+			start_minimizing = false
 	
-	if start_minimizing:
-		minimizing = true
-		embiggening = false
-		t = 0
-		start_minimizing = false
+		if embiggening:
+			t += delta
+			scale.x = clamp(-0.1 * cos((PI / 0.5) * t) + 0.4, 0.3, 0.5)
+			scale.y = clamp(-0.1 * cos((PI / 0.5) * t) + 0.4, 0.3, 0.5)
+			embiggening = scale.x < 0.498
+		elif minimizing:
+			t += delta
+			scale.x = clamp(0.1 * cos((PI / 0.5) * t) + 0.4, 0.3, 0.5)
+			scale.y = clamp(0.1 * cos((PI / 0.5) * t) + 0.4, 0.3, 0.5)
+			minimizing = scale.x > 0.302
 
-	if embiggening:
-		t += delta
-		scale.x = clamp(-0.1 * cos((PI / 0.5) * t) + 0.4, 0.3, 0.5)
-		scale.y = clamp(-0.1 * cos((PI / 0.5) * t) + 0.4, 0.3, 0.5)
-		embiggening = scale.x < 0.498
-	elif minimizing:
-		t += delta
-		scale.x = clamp(0.1 * cos((PI / 0.5) * t) + 0.4, 0.3, 0.5)
-		scale.y = clamp(0.1 * cos((PI / 0.5) * t) + 0.4, 0.3, 0.5)
-		minimizing = scale.x > 0.302
-
-func play(col):
+func play():
 	var val_sign
 	match col:
 		'R':
@@ -87,7 +101,39 @@ func card_mouse_exited():
 func card_input_event(viewport, event, shape_idx):
 	if event.is_pressed():
 		print("Card Pressed")
-		playing = true
+		if not _in_column:
+			if playing:
+				scale.x = 0.5
+				scale.y = 0.5
+				playing = false
+			else:
+				scale.x = 0.6
+				scale.y = 0.6
+				playing = true
+		else:
+			move(home)
+			_in_column = false
+			emit_signal("out_of_column")
 
 func move_to_colr():
-	
+	if playing and get_tree().get_root().get_node("Game").can_card_play():
+		position = colr_pos.position
+		playing = false
+		_in_column = true
+		col = 'R'
+		emit_signal("in_column")
+
+func move_to_coln():
+	if playing and get_tree().get_root().get_node("Game").can_card_play():
+		position = coln_pos.position
+		playing = false
+		_in_column = true
+		col = 'N'
+		emit_signal("in_column")
+
+func move_to_cols():
+	if playing and get_tree().get_root().get_node("Game").can_card_play():
+		position = cols_pos.position
+		playing = false
+		_in_column = true
+		emit_signal("in_column")

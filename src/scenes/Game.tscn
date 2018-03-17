@@ -104,14 +104,25 @@ _sections_unfolded = [ "Transform" ]
 position = Vector2( 1670, 940 )
 _sections_unfolded = [ "Transform" ]
 
-[connection signal="area_entered" from="ColR" to="." method="colr_area_entered"]
+[node name="ColRPos" type="Position2D" parent="." index="10"]
+
+position = Vector2( 320, 400 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="ColNPos" type="Position2D" parent="." index="11"]
+
+position = Vector2( 970, 400 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="ColSPos" type="Position2D" parent="." index="12"]
+
+position = Vector2( 1600, 400 )
+_sections_unfolded = [ "Transform" ]
 
 [connection signal="input_event" from="ColR" to="." method="colr_input_event"]
 
-[connection signal="mouse_entered" from="ColR" to="." method="colr_mouse_entered"]
+[connection signal="input_event" from="ColN" to="." method="coln_input_event"]
 
-[connection signal="mouse_entered" from="ColN" to="." method="coln_mouse_entered"]
-
-[connection signal="mouse_entered" from="ColS" to="." method="cols_mouse_entered"]
+[connection signal="input_event" from="ColS" to="." method="cols_input_event"]
 
 
