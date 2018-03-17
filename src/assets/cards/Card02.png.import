@@ -7,10 +7,10 @@ path="res://.import/Card02.png-8b1e866e86981f94c6f40d778183d328.stex"
 [deps]
 
 source_file="res://assets/cards/Card02.png"
-source_md5="92495b7ec5dff6f3bdcc4cc5d64f9b64"
+source_md5="abe8cac119d80c4b327028f9305d0dda"
 
 dest_files=[ "res://.import/Card02.png-8b1e866e86981f94c6f40d778183d328.stex" ]
-dest_md5="311d74f14fe2310db236df9ce7432bcf"
+dest_md5="8bcadd4af11160e4687bee5bc9aa84be"
 
 [params]
 

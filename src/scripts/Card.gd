@@ -48,14 +48,14 @@ func _process(delta):
 
 	if embiggening:
 		t += delta
-		scale.x = clamp(-cos((PI / 0.5) * t) + 4, 3, 5)
-		scale.y = clamp(-cos((PI / 0.5) * t) + 4, 3, 5)
-		embiggening = scale.x < 4.98
+		scale.x = clamp(-0.1 * cos((PI / 0.5) * t) + 0.4, 0.3, 0.5)
+		scale.y = clamp(-0.1 * cos((PI / 0.5) * t) + 0.4, 0.3, 0.5)
+		embiggening = scale.x < 0.498
 	elif minimizing:
 		t += delta
-		scale.x = clamp(cos((PI / 0.5) * t) + 4, 3, 5)
-		scale.y = clamp(cos((PI / 0.5) * t) + 4, 3, 5)
-		minimizing = scale.x > 3.02
+		scale.x = clamp(0.1 * cos((PI / 0.5) * t) + 0.4, 0.3, 0.5)
+		scale.y = clamp(0.1 * cos((PI / 0.5) * t) + 0.4, 0.3, 0.5)
+		minimizing = scale.x > 0.302
 
 func play(col):
 	var val_sign
@@ -81,3 +81,8 @@ func card_mouse_entered():
 
 func card_mouse_exited():
 	start_minimizing = true
+
+
+func card_input_event(viewport, event, shape_idx):
+	if event.is_pressed():
+		print("Card Pressed")
