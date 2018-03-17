@@ -124,8 +124,9 @@ func draw_card():
 	var cardNotDrawn = true
 	while cardNotDrawn:
 		var id = randi() % 24
-		var pos = last_five_cards.find(0) + 1
+		var pos = cards.find(0) + 1
 		if !last_five_cards.has(id) and pos <= 5:
+			print("Cards before draw: ", cards, "\nCards after draw: ", cards)
 			make_card(pos, id)
 			cardNotDrawn = false
 			last_five_cards.pop_back()
@@ -134,6 +135,7 @@ func draw_card():
 
 func discard(pos):
 	cards[pos - 1] = 0
+	print("Discarding at position ", pos)
 
 func win():
 	print("win")

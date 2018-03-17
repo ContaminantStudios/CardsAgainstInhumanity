@@ -21,17 +21,8 @@ func _process(delta):
 func exit_game():
 	get_tree().quit()
 
-func on_difficulty_pressed():
-	if $DifficultyButton.text == "Difficulty (Easy)":
-		$DifficultyButton.text = "Difficulty (Med)"
-	elif $DifficultyButton.text == "Difficulty (Med)":
-		$DifficultyButton.text = "Difficulty (Hard)"
-	else:
-		$DifficultyButton.text = "Difficulty (Easy)"
-
 func on_info_pressed():
 	$Info.show_all()
-
 
 func start_game():
 	get_tree().change_scene("res://scenes/Game.tscn")

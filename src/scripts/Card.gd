@@ -44,7 +44,6 @@ func init(card_id, pos, colr, coln, cols, relativePos):
 	n_val = N_VALS[card_id]
 	s_val = S_VALS[card_id]
 	point_type = POINT_TYPES[card_id]
-	print("Point Type: ", point_type)
 	$AnimatedSprite.animation = card
 	position = pos
 	embiggening = false
@@ -94,8 +93,8 @@ func _process(delta):
 			scale.y = clamp(beginning_scale - t, 0, beginning_scale)
 			dying = scale.x > 0.002
 			if not dying:
-				emit_signal("turn_done")
 				get_tree().get_root().get_node("Game").discard(_relativePos)
+				emit_signal("turn_done")
 				queue_free()
 
 func play():
