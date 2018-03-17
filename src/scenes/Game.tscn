@@ -1,11 +1,12 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://scripts/Game.gd" type="Script" id=1]
 [ext_resource path="res://assets/backdrops/PlayAreaMockNoArt.png" type="Texture" id=2]
-[ext_resource path="res://assets/fonts/Soviet2.ttf" type="DynamicFontData" id=3]
-[ext_resource path="res://assets/othericons/EducationIcon.png" type="Texture" id=4]
-[ext_resource path="res://assets/othericons/MilitaryIcon.png" type="Texture" id=5]
-[ext_resource path="res://assets/othericons/PoliticalIcon.png" type="Texture" id=6]
+[ext_resource path="res://assets/cards/CardStack.png" type="Texture" id=3]
+[ext_resource path="res://assets/fonts/Soviet2.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://assets/othericons/EducationIcon.png" type="Texture" id=5]
+[ext_resource path="res://assets/othericons/MilitaryIcon.png" type="Texture" id=6]
+[ext_resource path="res://assets/othericons/PoliticalIcon.png" type="Texture" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -29,7 +30,7 @@ _sections_unfolded = [ "Extra Spacing", "Settings" ]
 size = 70
 use_mipmaps = false
 use_filter = false
-font_data = ExtResource( 3 )
+font_data = ExtResource( 4 )
 _sections_unfolded = [ "Font", "Settings" ]
 
 [sub_resource type="DynamicFont" id=5]
@@ -37,7 +38,7 @@ _sections_unfolded = [ "Font", "Settings" ]
 size = 50
 use_mipmaps = false
 use_filter = false
-font_data = ExtResource( 3 )
+font_data = ExtResource( 4 )
 _sections_unfolded = [ "Font", "Settings" ]
 
 [node name="Game" type="Node2D" index="0"]
@@ -136,7 +137,13 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="DeckPos" type="Position2D" parent="." index="9"]
 
-position = Vector2( 1670, 940 )
+position = Vector2( 1770, 940 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="CardStack" type="Sprite" parent="DeckPos" index="0"]
+
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 3 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="ColRPos" type="Position2D" parent="." index="10"]
@@ -243,19 +250,19 @@ _sections_unfolded = [ "custom_fonts" ]
 
 position = Vector2( 1623.72, 48.9865 )
 scale = Vector2( 1.73661, 1.73661 )
-texture = ExtResource( 4 )
+texture = ExtResource( 5 )
 
 [node name="MilitaryIcon" type="Sprite" parent="." index="15"]
 
 position = Vector2( 1625.27, 110.357 )
 scale = Vector2( 1.73661, 1.73661 )
-texture = ExtResource( 5 )
+texture = ExtResource( 6 )
 
 [node name="PoliticalIcon" type="Sprite" parent="." index="16"]
 
 position = Vector2( 1623.46, 177.413 )
 scale = Vector2( 1.66744, 1.66744 )
-texture = ExtResource( 6 )
+texture = ExtResource( 7 )
 
 [node name="EducationPoints" type="Label" parent="." index="17"]
 
