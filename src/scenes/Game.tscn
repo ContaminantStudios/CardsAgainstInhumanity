@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 19.1861, 20.7033 )
+extents = Vector2( 19.5953, 20.7033 )
 
 [node name="Game" type="Node2D" index="0"]
 
@@ -20,8 +20,8 @@ texture = ExtResource( 2 )
 
 [node name="ColR" type="Area2D" parent="." index="1"]
 
-position = Vector2( 180.29, 198.047 )
-scale = Vector2( 4.27079, 4.9717 )
+position = Vector2( 325.321, 405.472 )
+scale = Vector2( 9.85306, 12.5442 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -34,13 +34,14 @@ _sections_unfolded = [ "Collision", "Transform" ]
 
 [node name="ColRShape" type="CollisionShape2D" parent="ColR" index="0"]
 
-visible = false
-position = Vector2( 35.3612, 42.5115 )
-scale = Vector2( 3.76277, 3.89295 )
+position = Vector2( 0.171829, -0.0292015 )
+scale = Vector2( 1.63097, 1.54292 )
 shape = SubResource( 1 )
 
 [node name="ColN" type="Area2D" parent="." index="2"]
 
+position = Vector2( 965.352, 408.12 )
+scale = Vector2( 9.64137, 12.5826 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -51,13 +52,14 @@ audio_bus_name = "Master"
 
 [node name="ColNShape" type="CollisionShape2D" parent="ColN" index="0"]
 
-visible = false
-position = Vector2( 963.995, 409.402 )
-scale = Vector2( 16.07, 19.3546 )
+position = Vector2( -0.140709, 0.101883 )
+scale = Vector2( 1.66678, 1.53821 )
 shape = SubResource( 1 )
 
 [node name="ColS" type="Area2D" parent="." index="3"]
 
+position = Vector2( 1599.9, 410.356 )
+scale = Vector2( 9.60366, 12.5259 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -68,9 +70,8 @@ audio_bus_name = "Master"
 
 [node name="ColSShape" type="CollisionShape2D" parent="ColS" index="0"]
 
-visible = false
-position = Vector2( 1598.9, 410.51 )
-scale = Vector2( 16.07, 19.3546 )
+position = Vector2( -0.10376, 0.0123291 )
+scale = Vector2( 1.67332, 1.54517 )
 shape = SubResource( 1 )
 
 [node name="CardPos1" type="Position2D" parent="." index="4"]
@@ -102,6 +103,10 @@ _sections_unfolded = [ "Transform" ]
 
 position = Vector2( 1670, 940 )
 _sections_unfolded = [ "Transform" ]
+
+[connection signal="area_entered" from="ColR" to="." method="colr_area_entered"]
+
+[connection signal="input_event" from="ColR" to="." method="colr_input_event"]
 
 [connection signal="mouse_entered" from="ColR" to="." method="colr_mouse_entered"]
 
