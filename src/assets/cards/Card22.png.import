@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/CardStack.png-f4e3d852b5659a02f91afe1ee1f7fb5c.stex"
+path="res://.import/Card22.png-4b5f7727d3edb399d6389462d5671031.stex"
 
 [deps]
 
-source_file="res://assets/cards/CardStack.png"
-source_md5="7c547e6dfad1967d2255d114d675f443"
+source_file="res://assets/cards/Card22.png"
+source_md5="4d0abfd9b47db6e8e341b0940a847cb4"
 
-dest_files=[ "res://.import/CardStack.png-f4e3d852b5659a02f91afe1ee1f7fb5c.stex" ]
-dest_md5="6e00f6f29c7625106caccb03fe57a7d5"
+dest_files=[ "res://.import/Card22.png-4b5f7727d3edb399d6389462d5671031.stex" ]
+dest_md5="06fee2d255d14a59dc5f3fbf4093f41e"
 
 [params]
 
@@ -19,7 +19,7 @@ compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=false
+flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

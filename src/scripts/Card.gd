@@ -5,13 +5,13 @@ signal out_of_column
 signal turn_done
 
 const CARDS = ['CARD_00', 'CARD_01', 'CARD_02', 'CARD_03', 'CARD_04', 'CARD_05', 'CARD_06', 'CARD_07', 'CARD_08', 'CARD_09', 'CARD_10', 
-	'CARD_11', 'CARD_12', 'CARD_14', 'CARD_15', 'CARD_16', 'CARD_17', 'CARD_18', 'CARD_19', 'CARD_20', 'CARD_21', 'CARD_22', 'CARD_23', 'CARD_24']
-const R_CHANCES = [0.8, 0.7, 0.4, 0.75, 0.6, 0.5, 0.8, 0.55, 0.2, 0.5, 0.3, 0.4, 0.9, 0.45, 0.3, 0.4, 0.6, 0.3, 0.65, 0.2]
-const N_CHANCES = [0.4, 0.3, 0.1, 0.3, 0.45, 0.2, 0.4, 0.25, 0.1, 0.3, 0.15, 0.2, 0.6, 0.2, 0.15, 0.15, 0.35, 0.15, 0.25, 0.1]
-const R_VALS = [50, 40, 20, 35, 25, 20, 35, 22, 6, 20, 10, 15, 50, 23, 15, 20, 30, 13, 32, 10]
-const N_VALS = [20, 20, 5, 15, 15, 10, 17, 8, 3, 10, 5, 7, 25, 11, 7, 7, 15, 5, 12, 4]
-const S_VALS = [8, 5, 2, 2, 3, 2, 4, 2, 1, 3, 2, 3, 10, 3, 3, 2, 3, 1, 4, 1]
-const POINT_TYPES = ['P', 'E', 'E', 'E', 'M', 'M', 'E', 'E', 'P', 'P', 'E', 'P', 'M', 'M', 'E', 'E', 'E', 'M', 'P', 'P']
+	'CARD_11', 'CARD_12', 'CARD_13', 'CARD_14', 'CARD_15', 'CARD_16', 'CARD_17', 'CARD_18', 'CARD_19', 'CARD_20', 'CARD_21', 'CARD_22', 'CARD_23', 'CARD_24']
+const R_CHANCES = [0.8, 0.7, 0.4, 0.75, 0.6, 0.5, 0.8, 0.55, 0.2, 0.5, 0.3, 0.4, 0.9, 0.45, 0.3, 0.4, 0.6, 0.3, 0.65, 0.2, 0.4, 0.8, 0.3, 0.55, 0.35]
+const N_CHANCES = [0.4, 0.3, 0.1, 0.3, 0.45, 0.2, 0.4, 0.25, 0.1, 0.3, 0.15, 0.2, 0.6, 0.2, 0.15, 0.15, 0.35, 0.15, 0.25, 0.1, 0.2, 0.45, 0.15, 0.25, 0.1]
+const R_VALS = [50, 40, 20, 35, 25, 20, 35, 22, 6, 20, 10, 15, 50, 23, 15, 20, 30, 13, 32, 10, 15, 35, 12, 25, 15]
+const N_VALS = [20, 20, 5, 15, 15, 10, 17, 8, 3, 10, 5, 7, 25, 11, 7, 7, 15, 5, 12, 4, 5, 15, 4, 10, 3]
+const S_VALS = [8, 5, 2, 2, 3, 2, 4, 2, 1, 3, 2, 3, 10, 3, 3, 2, 3, 1, 4, 1, 1, 6, 1, 3, 1]
+const POINT_TYPES = ['P', 'E', 'E', 'E', 'M', 'M', 'E', 'E', 'P', 'P', 'E', 'P', 'M', 'M', 'E', 'E', 'E', 'M', 'P', 'P', 'E', 'P', 'P', 'M', 'E']
 var card
 var r_chance
 var n_chance
@@ -34,8 +34,9 @@ var home
 var start_dying
 var dying
 var beginning_scale
+var _relativePos
 
-func init(card_id, pos, colr, coln, cols):
+func init(card_id, pos, colr, coln, cols, relativePos):
 	card = CARDS[card_id]
 	r_chance = R_CHANCES[card_id]
 	n_chance = N_CHANCES[card_id]
@@ -55,6 +56,7 @@ func init(card_id, pos, colr, coln, cols):
 	col = 'S'
 	home = pos
 	dying = false
+	_relativePos = relativePos
 
 func _process(delta):
 	if not playing:	
@@ -93,6 +95,7 @@ func _process(delta):
 			dying = scale.x > 0.002
 			if not dying:
 				emit_signal("turn_done")
+				get_tree().get_root().get_node("Game").discard(_relativePos)
 				queue_free()
 
 func play():

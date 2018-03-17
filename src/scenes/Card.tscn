@@ -1,8 +1,28 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://scripts/Card.gd" type="Script" id=1]
 [ext_resource path="res://assets/cards/CardBase.png" type="Texture" id=2]
-[ext_resource path="res://assets/cards/Card00.png" type="Texture" id=3]
+[ext_resource path="res://assets/cards/Card04.png" type="Texture" id=3]
+[ext_resource path="res://assets/cards/Card05.png" type="Texture" id=4]
+[ext_resource path="res://assets/cards/Card17.png" type="Texture" id=5]
+[ext_resource path="res://assets/cards/Card01.png" type="Texture" id=6]
+[ext_resource path="res://assets/cards/Card00.png" type="Texture" id=7]
+[ext_resource path="res://assets/cards/Card02.png" type="Texture" id=8]
+[ext_resource path="res://assets/cards/Card06.png" type="Texture" id=9]
+[ext_resource path="res://assets/cards/Card08.png" type="Texture" id=10]
+[ext_resource path="res://assets/cards/Card11.png" type="Texture" id=11]
+[ext_resource path="res://assets/cards/Card07.png" type="Texture" id=12]
+[ext_resource path="res://assets/cards/Card14.png" type="Texture" id=13]
+[ext_resource path="res://assets/cards/Card15.png" type="Texture" id=14]
+[ext_resource path="res://assets/cards/Card10.png" type="Texture" id=15]
+[ext_resource path="res://assets/cards/Card03.png" type="Texture" id=16]
+[ext_resource path="res://assets/cards/Card18.png" type="Texture" id=17]
+[ext_resource path="res://assets/cards/Card19.png" type="Texture" id=18]
+[ext_resource path="res://assets/cards/Card20.png" type="Texture" id=19]
+[ext_resource path="res://assets/cards/Card12.png" type="Texture" id=20]
+[ext_resource path="res://assets/cards/Card09.png" type="Texture" id=21]
+[ext_resource path="res://assets/cards/Card13.png" type="Texture" id=22]
+[ext_resource path="res://assets/cards/Card16.png" type="Texture" id=23]
 
 [sub_resource type="SpriteFrames" id=1]
 
@@ -12,19 +32,109 @@ animations = [ {
 "name": "base",
 "speed": 1.0
 }, {
-"frames": [  ],
+"frames": [ ExtResource( 3 ) ],
+"loop": true,
+"name": "CARD_04",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "CARD_05",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ) ],
+"loop": true,
+"name": "CARD_17",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ) ],
 "loop": true,
 "name": "CARD_01",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 3 ) ],
+"frames": [ ExtResource( 7 ) ],
 "loop": true,
 "name": "CARD_00",
 "speed": 1.0
 }, {
-"frames": [  ],
+"frames": [ ExtResource( 8 ) ],
 "loop": true,
 "name": "CARD_02",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 9 ) ],
+"loop": true,
+"name": "CARD_06",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 10 ) ],
+"loop": true,
+"name": "CARD_08",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 11 ) ],
+"loop": true,
+"name": "CARD_11",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 12 ) ],
+"loop": true,
+"name": "CARD_07",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 13 ) ],
+"loop": true,
+"name": "CARD_14",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 14 ) ],
+"loop": true,
+"name": "CARD_15",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 15 ) ],
+"loop": true,
+"name": "CARD_10",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 16 ) ],
+"loop": true,
+"name": "CARD_03",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 17 ) ],
+"loop": true,
+"name": "CARD_18",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 18 ) ],
+"loop": true,
+"name": "CARD_19",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 19 ) ],
+"loop": true,
+"name": "CARD_20",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 20 ) ],
+"loop": true,
+"name": "CARD_12",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 21 ) ],
+"loop": true,
+"name": "CARD_09",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 22 ) ],
+"loop": true,
+"name": "CARD_13",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 23 ) ],
+"loop": true,
+"name": "CARD_16",
 "speed": 5.0
 } ]
 
@@ -33,7 +143,7 @@ animations = [ {
 custom_solver_bias = 0.0
 extents = Vector2( 230.6, 344.362 )
 
-[node name="Card" type="Area2D" index="0"]
+[node name="Card" type="Area2D"]
 
 scale = Vector2( 0.3, 0.3 )
 input_pickable = true
@@ -56,6 +166,7 @@ animation = "base"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
 
+visible = false
 position = Vector2( -0.239955, 0 )
 scale = Vector2( 1.05359, 1 )
 shape = SubResource( 2 )
