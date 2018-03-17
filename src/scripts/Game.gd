@@ -5,6 +5,7 @@ signal coln_selected
 signal cols_selected
 signal card_in_column
 signal card_played
+signal turn_passed
 
 var _card_in_column
 var p
@@ -39,6 +40,7 @@ func make_card(pos, id):
 	self.connect("coln_selected", card_node, "move_to_coln")
 	self.connect("cols_selected", card_node, "move_to_cols")
 	self.connect("card_played", card_node, "play_card")
+	self.connect("turn_passed", card_node, "move_home")
 	card_node.connect("in_column", self, "set_can_card_play_false")
 	card_node.connect("out_of_column", self, "set_can_card_play_true")
 	card_node.connect("turn_done", self, "complete_turn")
@@ -88,3 +90,10 @@ func complete_turn():
 	turns -= 1
 	$UI/Turns.text = str("Turns: ", turns)
 	_card_in_column = false
+
+
+func pass_button_pressed():
+	emit_signal("turn_passed")
+	turns -= 1
+	$UI/Turns.text = str("Turns: ", turns)
+	#TODO Draw Two Cards

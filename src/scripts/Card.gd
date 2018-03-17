@@ -165,3 +165,6 @@ func play_card():
 		start_dying = true
 		minimizing = false
 		embiggening = false
+
+func move_home():
+	move(home)

@@ -211,10 +211,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 833.0
-margin_top = 32.0
-margin_right = 1099.0
-margin_bottom = 111.0
+margin_left = 824.0
+margin_top = 31.0
+margin_right = 1090.0
+margin_bottom = 110.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
@@ -235,5 +235,7 @@ _sections_unfolded = [ "custom_fonts" ]
 [connection signal="input_event" from="ColS" to="." method="cols_input_event"]
 
 [connection signal="pressed" from="UI/PlayButton" to="." method="play_button_pressed"]
+
+[connection signal="pressed" from="UI/PassButton" to="." method="pass_button_pressed"]
 
 
