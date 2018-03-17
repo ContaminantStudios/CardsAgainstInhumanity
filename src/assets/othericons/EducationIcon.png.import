@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/MilitaryIcon.png-d004c9b6ece24ed8bec6fb131a1869d7.stex"
+path="res://.import/EducationIcon.png-7dfdd6be439ff925dd257affbb907fed.stex"
 
 [deps]
 
-source_file="res://assets/othericons/MilitaryIcon.png"
-source_md5="cb384a8fb223051c771076644ab8052e"
+source_file="res://assets/othericons/EducationIcon.png"
+source_md5="7f4c8d9a624bc40ab6193aec88ce7ca6"
 
-dest_files=[ "res://.import/MilitaryIcon.png-d004c9b6ece24ed8bec6fb131a1869d7.stex" ]
-dest_md5="d71ed0571676c1681f85b562d5524be8"
+dest_files=[ "res://.import/EducationIcon.png-7dfdd6be439ff925dd257affbb907fed.stex" ]
+dest_md5="bf9ceaaac1cf3452bd80905cbff1c3e0"
 
 [params]
 

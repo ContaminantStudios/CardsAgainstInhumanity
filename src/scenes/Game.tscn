@@ -1,8 +1,11 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://scripts/Game.gd" type="Script" id=1]
 [ext_resource path="res://assets/backdrops/PlayAreaMockNoArt.png" type="Texture" id=2]
 [ext_resource path="res://assets/fonts/Soviet2.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://assets/othericons/EducationIcon.png" type="Texture" id=4]
+[ext_resource path="res://assets/othericons/MilitaryIcon.png" type="Texture" id=5]
+[ext_resource path="res://assets/othericons/PoliticalIcon.png" type="Texture" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -24,6 +27,14 @@ _sections_unfolded = [ "Extra Spacing", "Settings" ]
 [sub_resource type="DynamicFont" id=4]
 
 size = 70
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 3 )
+_sections_unfolded = [ "Font", "Settings" ]
+
+[sub_resource type="DynamicFont" id=5]
+
+size = 50
 use_mipmaps = false
 use_filter = false
 font_data = ExtResource( 3 )
@@ -223,6 +234,93 @@ size_flags_horizontal = 1
 size_flags_vertical = 4
 custom_fonts/font = SubResource( 4 )
 text = "Turns: 20"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="EducationIcon" type="Sprite" parent="." index="14"]
+
+position = Vector2( 1623.72, 48.9865 )
+scale = Vector2( 1.73661, 1.73661 )
+texture = ExtResource( 4 )
+
+[node name="MilitaryIcon" type="Sprite" parent="." index="15"]
+
+position = Vector2( 1625.27, 110.357 )
+scale = Vector2( 1.73661, 1.73661 )
+texture = ExtResource( 5 )
+
+[node name="PoliticalIcon" type="Sprite" parent="." index="16"]
+
+position = Vector2( 1623.46, 177.413 )
+scale = Vector2( 1.66744, 1.66744 )
+texture = ExtResource( 6 )
+
+[node name="EducationPoints" type="Label" parent="." index="17"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 1691.0
+margin_top = 24.0
+margin_right = 1855.0
+margin_bottom = 81.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 5 )
+text = "1 / 100"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="PoliticalPoints" type="Label" parent="." index="18"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 1693.0
+margin_top = 148.0
+margin_right = 1857.0
+margin_bottom = 205.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 5 )
+text = "1 / 100"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Margin", "custom_fonts" ]
+
+[node name="MilitaryPoints" type="Label" parent="." index="19"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 1692.0
+margin_top = 85.0
+margin_right = 1856.0
+margin_bottom = 142.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 5 )
+text = "1 / 100"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1

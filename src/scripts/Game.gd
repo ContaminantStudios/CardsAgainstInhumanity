@@ -22,6 +22,11 @@ func _ready():
 	_card_in_column = false
 	$UI/PlayButton.disabled = true
 
+func _process(delta):
+	$MilitaryPoints.text = str(clamp(m, 0, 100), " / 100")
+	$EducationPoints.text = str(clamp(e, 0, 100), " / 100")
+	$PoliticalPoints.text = str(clamp(p, 0, 100), " / 100")
+
 func make_card(pos, id):
 	var card_scene = preload("res://scenes/Card.tscn")
 	var card_node = card_scene.instance()
