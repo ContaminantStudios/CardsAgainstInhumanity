@@ -1,11 +1,15 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://scripts/Info.gd" type="Script" id=1]
-[ext_resource path="res://assets/fonts/Soviet2.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://assets/fonts/Consolas.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://assets/fonts/Soviet2.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://assets/othericons/EducationIcon.png" type="Texture" id=4]
+[ext_resource path="res://assets/othericons/MilitaryIcon.png" type="Texture" id=5]
+[ext_resource path="res://assets/othericons/PoliticalIcon.png" type="Texture" id=6]
 
 [sub_resource type="DynamicFont" id=1]
 
-size = 30
+size = 25
 use_mipmaps = false
 use_filter = false
 font_data = ExtResource( 2 )
@@ -16,10 +20,10 @@ _sections_unfolded = [ "Font", "Settings" ]
 size = 40
 use_mipmaps = false
 use_filter = false
-font_data = ExtResource( 2 )
+font_data = ExtResource( 3 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[node name="Info" type="CanvasLayer"]
+[node name="Info" type="CanvasLayer" index="0"]
 
 layer = 1
 offset = Vector2( 0, 0 )
@@ -48,16 +52,16 @@ size_flags_vertical = 1
 color = Color( 0.832031, 0.295761, 0.295761, 0.801098 )
 _sections_unfolded = [ "Anchor", "Material", "Visibility" ]
 
-[node name="Label" type="Label" parent="." index="1"]
+[node name="Rules" type="Label" parent="." index="1"]
 
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -940.0
+margin_left = -942.0
 margin_top = -509.0
-margin_right = 252.0
-margin_bottom = 133.0
+margin_right = 300.0
+margin_bottom = 155.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
@@ -65,22 +69,81 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
 custom_fonts/font = SubResource( 1 )
-text = "This is where all of the info is"
+text = "In CAI, your main goal is to collect 100 of one of the following resources: 
+   : E(ducation)
+   : M(ilitary power)
+   : P(olitical power)
+To do so, you play cards that have an action associated with them. Each card can 
+be played in one of three columns (R(isky), N(eutral), or S(afe)). Each card has a point
+type associated with  them (P, E, or M).
+Playing a card in the R column will have the highest chance of your action failing. 
+However, it has the highest potential reward (and the highest potential failure). If
+your action fails, you will lose the same amount of points that you would have gained if
+you succeeded (you cannot have negative of any resource).
+Playing a card in the N column will have a small chance of failure. However, it has a 
+relatively small reward and a relatively small failure. Again, you will lose the points
+you would have gained if you fail.
+Playing a card in the S column is guaranteed to succeed, but its point value is 
+extremely small (you cannot win the game by just using this column).
+On each turn, you can either play a card or pass. Once you play a card in a column, 
+you draw another at the beginning of the next. If you pass, you will draw two cards at
+the beginning of the next turn.
+Your resources are displayed in the upper right corner (icons correspond to those in 
+the rules section). 
+The number of turns you have left to win is displayed in the upper center.
+"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "custom_fonts" ]
 
-[node name="Button" type="Button" parent="." index="2"]
+[node name="Controls" type="Label" parent="." index="2"]
+
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -942.0
+margin_top = -509.0
+margin_right = 300.0
+margin_bottom = 155.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 1 )
+text = "On each turn, you can either play a card or pass. Once you play a card in a column, you 
+draw another at the beginning of the next. If you pass, you will draw two cards at the 
+beginning of the next turn. Your resources are displayed in the upper right corner 
+(icons correspond to those in the rules section). 
+The number of turns you have left to win is displayed in the upper center.
+
+Joseph Stalin became the totalitarian dictator of the Union of Soviet Socialist 
+Republics in 1929.  He used brutally effective tactics in order to control the 
+nation for 24 years.  His reign was characterized by harsh, preemptive
+punishments and an overall rule by fear.  Over the course of his rule, Russia 
+was set up for many global conflicts such as the second world war and the 
+cold war.  Eventually, when the U.S.S.R. broke, it formed many new smaller 
+states such as Abkhazia and Nagorno-Karabakh.
+"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="Back" type="Button" parent="." index="3"]
 
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = 198.0
-margin_top = 102.0
-margin_right = 282.0
-margin_bottom = 154.0
+margin_left = -954.0
+margin_top = 126.0
+margin_right = -870.0
+margin_bottom = 178.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -98,6 +161,79 @@ flat = false
 align = 1
 _sections_unfolded = [ "Margin", "Visibility", "custom_fonts" ]
 
-[connection signal="pressed" from="Button" to="." method="hide_all"]
+[node name="Next" type="Button" parent="." index="4"]
+
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 213.0
+margin_top = 122.0
+margin_right = 298.0
+margin_bottom = 174.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_fonts/font = SubResource( 2 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Next"
+flat = false
+align = 1
+_sections_unfolded = [ "Margin", "Visibility", "custom_fonts" ]
+
+[node name="Previous" type="Button" parent="." index="5"]
+
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 114.0
+margin_top = 122.0
+margin_right = 199.0
+margin_bottom = 174.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_fonts/font = SubResource( 2 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Prev"
+flat = false
+align = 1
+_sections_unfolded = [ "Margin", "Visibility", "custom_fonts" ]
+
+[node name="EducationIcon" type="Sprite" parent="." index="6"]
+
+position = Vector2( 36.0672, 70.4604 )
+texture = ExtResource( 4 )
+
+[node name="MilitaryIcon" type="Sprite" parent="." index="7"]
+
+position = Vector2( 33.1394, 98.8257 )
+texture = ExtResource( 5 )
+
+[node name="PoliticalIcon" type="Sprite" parent="." index="8"]
+
+position = Vector2( 34.11, 130.054 )
+texture = ExtResource( 6 )
+
+[connection signal="pressed" from="Back" to="." method="hide_all"]
+
+[connection signal="pressed" from="Next" to="." method="next_pressed"]
+
+[connection signal="pressed" from="Previous" to="." method="previous_pressed"]
 
 
